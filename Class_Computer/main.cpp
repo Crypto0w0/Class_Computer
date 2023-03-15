@@ -87,6 +87,14 @@ class Computer{
     Printer* pr;
     Mouse* m;
 public:
+    Computer(Processor pr, Videocard vi, DynMemory dy, WebCamera* we, Mouse* mo, Printer* prin){
+        p = pr;
+        v = vi;
+        d = dy;
+        w = we;
+        m = mo;
+        this->pr = prin;
+    }
     ~Computer(){
         delete pr;
         delete w;
@@ -110,6 +118,12 @@ public:
 };
 
 int main() {
-    Computer c;
-    c.Print();
+    Processor p;
+    Videocard v;
+    DynMemory d;
+    WebCamera* w;
+    Printer* pr;
+    Mouse* m;
+    Computer comp(p, v, d, w, m, pr);
+    comp.Print();
 }
