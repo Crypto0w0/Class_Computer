@@ -95,11 +95,6 @@ public:
         m = mo;
         this->pr = prin;
     }
-    ~Computer(){
-        delete pr;
-        delete w;
-        delete m;
-    }
     void Print(){
         cout << "Processor\n";
         p.Print();
@@ -121,9 +116,9 @@ int main() {
     Processor p;
     Videocard v;
     DynMemory d;
-    WebCamera* w;
-    Printer* pr;
-    Mouse* m;
+    WebCamera* w = new WebCamera;
+    Printer* pr = new Printer;
+    Mouse* m = new Mouse;
     Computer comp(p, v, d, w, m, pr);
     comp.Print();
 }
